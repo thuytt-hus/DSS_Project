@@ -1,0 +1,5 @@
+.image_student{
+    max-width: 100%;
+    object-fit: cover;
+    height: 300px;
+}
