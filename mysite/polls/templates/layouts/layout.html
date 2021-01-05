@@ -35,7 +35,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <a href="/emp" class="btn btn-success">Add student</a>
+             <a href="/emp" class="btn btn-success">Add student</a>
         </div>
 
         <div class="col-sm-12">
@@ -60,45 +60,27 @@
                 {% endfor %}
             </ul>
         </div>
-        <!--Pagination-->
-        <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-                {% if students.has_previous %}
-                <li class="page-item">
-                    <a class="page-link" href="?page={{ students.previous_page_number }}">Previous</a>
-                </li>
-                {% else %}
-                <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                </li>
-                {% endif %}
-                {% for i in students.paginator.page_range %}
-                {% if students.number == i %}
-                <li class="page-item active" aria-current="page">
-              <span class="page-link">
-                {{ i }}
-                <span class="sr-only">(current)</span>
-              </span>
-                </li>
-                {% else %}
-                <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
-                {% endif %}
-                {% endfor %}
-                {% if students.has_next %}
-                <li class="page-item">
-                    <a class="page-link" href="?page={{ students.next_page_number }}">Next</a>
-                </li>
-                {% else %}
-                <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Next</a>
-                </li>
-                {% endif %}
-            </ul>
-        </nav>
-        <!--end of Pagination-->
     </div>
 </div>
-
+<!--
+<div class="row">
+    {% for student in students %}
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <img src="{{ student.image.url }}">
+            <div class="caption">
+                <h3>{{student.name}}</h3><br>
+                <p>{{student.studentid}}</p>
+                <p>{{student.major}}</p>
+                <p>{{student.faculty}}</p>
+                <p>{{student.university}}</p>
+                <p>{{student.location}}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+-->
 
 </body>
 </html>
